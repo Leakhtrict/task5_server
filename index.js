@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const io = require("socket.io")(3101, {
+require("dotenv").config();
+const io = require("socket.io")(process.env.PORT || 3101, {
     cors: {
         origin: ["http://localhost:3000"],
     },
